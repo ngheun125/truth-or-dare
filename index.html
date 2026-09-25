@@ -6,7 +6,7 @@
     <title>Truth or Dare</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    
+
     <style>
         body {
             font-family: 'Outfit', sans-serif;
@@ -131,7 +131,7 @@
         </button>
 
         <h2 id="choice-category-title" class="text-2xl font-bold text-slate-300 mb-8 mt-12 uppercase tracking-widest animate-slide-up">Category</h2>
-        
+
         <div class="flex flex-col gap-6 w-full animate-pop-in">
             <button onclick="app.selectMode('truth')" class="group relative w-full py-16 rounded-3xl overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg transform transition hover:-translate-y-2 active:translate-y-1">
                 <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
@@ -151,7 +151,7 @@
 
     <!-- SCREEN 3: QUESTION DISPLAY -->
     <main id="screen-question" class="screen flex-col items-center justify-center w-full max-w-2xl z-10 px-4">
-        
+
         <!-- Navigation Buttons Container (Flex, Not Absolute) -->
         <div class="w-full flex justify-between items-center mb-6 z-20">
              <button onclick="app.goBackToChoice()" class="text-white hover:text-pink-300 transition flex items-center gap-2 font-medium glass-btn px-4 py-2 rounded-full shadow-lg">
@@ -170,7 +170,7 @@
             <div id="card-glow" class="absolute inset-0 opacity-20 pointer-events-none transition-colors duration-500"></div>
 
             <span id="question-type-label" class="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-white/70 relative z-10">Type</span>
-            
+
             <h3 id="question-text" class="text-3xl md:text-5xl font-bold leading-tight mb-8 text-white relative z-10 drop-shadow-sm min-h-[150px] flex items-center justify-center">
                 Question goes here?
             </h3>
@@ -196,7 +196,57 @@
                     "What's a child's movie that honestly still scares you?",
                     "What is the stupidest thing you've ever lied about?",
                     "Have you ever accidentally sent a text to the wrong person that ruined your life for a day?",
-                    "What's the worst outfit you've ever worn in public?"
+                    "What's the worst outfit you've ever worn in public?",
+                    "What's the weirdest thing you've ever eaten on a dare or a bet?",
+                    "What's a lie you told as a kid that somehow worked?",
+                    "What's the most ridiculous excuse you've ever used to skip class or work?",
+                    "If your pet could talk, what's the most embarrassing thing they'd say about you?",
+                    "What's a food combination you love that grosses everyone else out?",
+                    "What's the weirdest dream you've ever had about someone in this room?",
+                    "What's your most unhinged 3am thought?",
+                    "What's a nickname you secretly hate but never told anyone?",
+                    "What app do you spend way too much time on that you're embarrassed about?",
+                    "What's the dumbest injury you've ever gotten?",
+                    "What's a trend you followed that you're now embarrassed about?",
+                    "What's the weirdest thing you've Googled this week?",
+                    "What's your most irrational fear?",
+                    "What's the most embarrassing thing your parents have caught you doing?",
+                    "What's a song you know every word to but would never admit you like?",
+                    "What's the most awkward thing that's happened to you in an elevator?",
+                    "What's your go-to excuse when you show up late?",
+                    "What's the weirdest thing you talk to yourself about?",
+                    "What's a conspiracy theory you secretly kind of believe?",
+                    "What's the most embarrassing autocorrect fail you've ever sent?",
+                    "What's the worst haircut you've ever had?",
+                    "What's a talent you have that nobody knows about?",
+                    "What's the pettiest thing you've ever cried about?",
+                    "What's your most used emoji and why is it that one?",
+                    "What's the weirdest thing you've done to impress a crush?",
+                    "What's a habit your friends make fun of you for?",
+                    "What's the most embarrassing thing in your camera roll right now?",
+                    "What's a childhood nickname you never want to hear again?",
+                    "What's the weirdest excuse you've heard (or used) to leave a party early?",
+                    "What's something you pretend to understand but actually have no clue about?",
+                    "What's the most embarrassing thing you've done in front of a teacher?",
+                    "What's your worst 'reply all' or wrong-group-chat story?",
+                    "What's the silliest thing that's ever made you cry laughing?",
+                    "What's a food you refuse to eat because of a childhood trauma?",
+                    "What's the weirdest compliment you've ever received?",
+                    "What's the most ridiculous thing you've bought and instantly regretted?",
+                    "What's your go-to karaoke song when you're trying to be funny?",
+                    "What's the weirdest thing you've done to avoid small talk?",
+                    "What's the most embarrassing thing that's ever fallen out of your bag in public?",
+                    "What's a joke you find hilarious that nobody else laughs at?",
+                    "What's the most times you've watched the same show or movie?",
+                    "What's a weird thing you do that you thought was normal until someone pointed it out?",
+                    "What's the most embarrassing thing that's happened to you at a family gathering?",
+                    "What's the silliest superstition you actually follow?",
+                    "What's the worst gift you've ever received and pretended to love?",
+                    "What's a phrase or catchphrase you say way too often?",
+                    "What's the most embarrassing thing you've done while trying to look cool?",
+                    "What's your most dramatic reaction to a tiny inconvenience?",
+                    "What's the weirdest thing you collect or used to collect?",
+                    "What's the most ridiculous fight you've ever had with a sibling or friend?"
                 ],
                 dare: [
                     "Do your best impression of the person to your right.",
@@ -208,7 +258,57 @@
                     "Let the group give you a new hairstyle.",
                     "Do a dramatic reading of the last text message you received.",
                     "Try to lick your own elbow.",
-                    "Act like a monkey until it's your turn again."
+                    "Act like a monkey until it's your turn again.",
+                    "Do your best impression of a news anchor reporting on this party.",
+                    "Let the group draw on your face with eyeliner or a marker (nothing permanent!).",
+                    "Speak only in questions for the next 3 minutes.",
+                    "Do 10 jumping jacks while naming a different fruit with each jump.",
+                    "Narrate the next 2 minutes of the game like a movie trailer voiceover.",
+                    "Wear your clothes inside out for the rest of the game.",
+                    "Do a celebrity impression until someone guesses who it is.",
+                    "Let the group pick your profile picture for the next hour.",
+                    "Speak only in rhymes for the next 2 rounds.",
+                    "Do the chicken dance for 30 seconds.",
+                    "Make everyone in the room laugh without touching them or speaking.",
+                    "Walk across the room in dramatic slow motion.",
+                    "Do your best baby impression for 1 minute, crying included.",
+                    "Juggle 3 random objects from the room for 30 seconds (dropping doesn't count against you).",
+                    "Act out your most embarrassing memory in charades until someone guesses it.",
+                    "Do a fake infomercial trying to sell a random object in the room.",
+                    "Let the group choose your phone ringtone for the next hour.",
+                    "Say the alphabet backwards as fast as you can.",
+                    "Do a robot dance for 30 seconds.",
+                    "Balance a book on your head and walk across the room without it falling.",
+                    "Let someone style your hair however they want for the rest of the game.",
+                    "Do an interpretive dance representing 'Monday morning'.",
+                    "Try to make a fart noise with your armpit at least 5 times in a row.",
+                    "Do your best impression of everyone's reaction when they saw this dare.",
+                    "Hold a plank while telling the group your life story in 60 seconds.",
+                    "Let the group pick a new nickname for you that you must answer to for the rest of the game.",
+                    "Do a dramatic Shakespearean monologue about the snack table.",
+                    "Pretend to be a news reporter covering a 'breaking story' about the person to your left.",
+                    "Try to make a paper airplane with your eyes closed.",
+                    "Do your best impression of a cat for 1 minute.",
+                    "Sing 'Happy Birthday' like you're auditioning for a horror movie.",
+                    "Let the group pose you for a dramatic photoshoot.",
+                    "Do 5 push-ups while explaining your favorite meme.",
+                    "Try to guess what's in someone's pocket by only touching it from the outside.",
+                    "Do your best impression of a Disney villain laugh.",
+                    "Speak in a British accent until your next turn.",
+                    "Let someone draw your portrait in 60 seconds — you have to display it proudly.",
+                    "Do a dramatic reading of a random text message from your notes app.",
+                    "Pretend you're a game show host introducing the next round.",
+                    "Do your best impression of a toddler having a tantrum for 30 seconds.",
+                    "Try to whistle the tune of a song someone else picks.",
+                    "Do a silent movie style reenactment of how you woke up this morning.",
+                    "Let the group vote on an embarrassing dance you have to do.",
+                    "Try to do a cartwheel (or your best attempt at one).",
+                    "Do your best impression of a weather reporter during a storm.",
+                    "Hold an entire conversation using only movie quotes.",
+                    "Do a dramatic villain monologue about why you deserve the last slice of pizza.",
+                    "Try to eat a cracker and whistle right after.",
+                    "Do your best impression of a substitute teacher taking attendance.",
+                    "Act like you just won an Oscar and give an acceptance speech for 'Best Player of Truth or Dare'."
                 ]
             },
             juicy: {
@@ -222,7 +322,57 @@
                     "What is the biggest red flag you've ignored in a person?",
                     "If you had to date someone in this room, who would it be?",
                     "What's the most petty reason you've stopped talking to someone?",
-                    "Have you ever ghosted someone? Why?"
+                    "Have you ever ghosted someone? Why?",
+                    "What's the most awkward thing that's ever happened on a first date?",
+                    "Have you ever liked an old photo while stalking someone's social media?",
+                    "What's a rumor about you that was actually true?",
+                    "Who's the last person you stalked on social media and why?",
+                    "What's the most dramatic thing you've done over a crush?",
+                    "Have you ever pretended to like someone's friend just to be nice?",
+                    "What's the messiest breakup story you have (yours or someone else's you witnessed)?",
+                    "Who in this room gives you the most 'main character energy'?",
+                    "Have you ever been jealous of a friend's relationship?",
+                    "What's the boldest thing you've ever done to get someone's attention?",
+                    "Who's someone you used to be close with but drifted from, and why?",
+                    "What's a secret you've kept for a friend that you wish you didn't have to?",
+                    "Have you ever liked two people at the same time? What happened?",
+                    "What's the most embarrassing thing you've done for attention?",
+                    "Who's the person in this room you'd trust with your biggest secret?",
+                    "Have you ever eavesdropped on a conversation about yourself?",
+                    "What's the pettiest revenge you've ever taken on someone?",
+                    "Who's someone you regret not telling how you felt about them?",
+                    "What's a group chat drama you were part of?",
+                    "Have you ever pretended to be busy to avoid someone?",
+                    "What's the most jealous you've ever felt and why?",
+                    "Who do you think has a crush on someone in this room right now?",
+                    "Have you ever read someone's texts without permission?",
+                    "What's the most toxic trait you know you have in relationships?",
+                    "Who's someone you'd never introduce to your parents and why?",
+                    "What's a secret talent or hobby you keep hidden from most people?",
+                    "Have you ever faked being sick to get out of plans?",
+                    "What's the most dramatic thing that's happened at a party you've been to?",
+                    "Who's the last person you cried over?",
+                    "Have you ever gone through an ex's social media recently?",
+                    "What's a white lie you tell often?",
+                    "Who in this room would you trust to plan your birthday party?",
+                    "What's the most embarrassing thing a friend has told everyone about you?",
+                    "Have you ever liked someone your friend also liked?",
+                    "What's the weirdest thing you've done to get over a breakup?",
+                    "Who's someone you've lost touch with that you think about sometimes?",
+                    "What's the most savage thing you've ever said to someone?",
+                    "Have you ever pretended not to see a text so you didn't have to reply right away?",
+                    "What's a secret about someone else in this room that you know?",
+                    "Who's the most dramatic person you know personally?",
+                    "Have you ever been the 'other option' in someone's life?",
+                    "What's the biggest lie you've told to keep the peace?",
+                    "Who do you think is the best kisser in this room? Just kidding, unless...?",
+                    "What's something you've done that you'd never tell your parents?",
+                    "Have you ever had a crush on a teacher, tutor, or someone way older?",
+                    "What's the most chaotic thing that's happened at a sleepover you were part of?",
+                    "Who's someone in your life you secretly compete with?",
+                    "What's a secret you found out about someone that changed how you saw them?",
+                    "Have you ever been caught in a lie by someone in this room?",
+                    "What's the most embarrassing thing you've done to avoid an ex at a party?"
                 ],
                 dare: [
                     "Show the group your screen time stats on your phone.",
@@ -234,7 +384,57 @@
                     "Let someone send a random emoji to anyone in your contacts.",
                     "Tell the group your most controversial opinion about dating.",
                     "Rate everyone in the room's outfit from 1-10.",
-                    "Show the last 5 things you searched on Google."
+                    "Show the last 5 things you searched on Google.",
+                    "Let the group read your last 5 text messages out loud (you can redact names).",
+                    "Post an embarrassing throwback photo on your story right now.",
+                    "Let the person to your right send a text from your phone to anyone they choose.",
+                    "Call your mom or dad and tell them you love them in the most dramatic way possible.",
+                    "Show the group the last voice memo or voice message on your phone.",
+                    "Let the group look through your saved Instagram posts.",
+                    "Change your social media bio to something the group picks for 24 hours.",
+                    "Read your horoscope out loud and explain how accurate it is right now.",
+                    "Let someone go through your recent calls and ask about one.",
+                    "Text the last person you texted 'I have something to tell you' and show the group their reply.",
+                    "Show the group your camera roll from exactly one year ago today.",
+                    "Let the group pick your next Instagram caption.",
+                    "Do a live rating of everyone's last Instagram post.",
+                    "Send a voice message to a random contact singing a nursery rhyme.",
+                    "Let the person across from you read your texts with your best friend.",
+                    "Show the group the first photo in your camera roll.",
+                    "Post a story asking your followers to rate this party out of 10.",
+                    "Let the group choose someone for you to send a 'thinking of you' text to.",
+                    "Read out the last thing you searched about a person, not a topic.",
+                    "Show the group your most-used app and how many hours you spent on it this week.",
+                    "Let someone else answer your next text message for you.",
+                    "Call a friend and tell them a compliment you've never said out loud to them.",
+                    "Show the group your camera roll folder titled anything embarrassing (if it exists).",
+                    "Let the group listen to your most played song on repeat right now.",
+                    "Text your group chat and ask who they think is the most 'dramatic' in the friend group.",
+                    "Let the person next to you scroll your liked posts for 20 seconds.",
+                    "Read your last 3 sent voice messages out loud.",
+                    "Show the group a screenshot of a conversation that still makes you laugh.",
+                    "Let the group pick a new contact name for someone in your phone.",
+                    "Do an honest one-word review of everyone in the room, out loud.",
+                    "Show the group the weirdest thing saved in your notes app.",
+                    "Let someone post 'this is a truth or dare dare' on your story.",
+                    "Read the caption of your most-liked post and explain the story behind it.",
+                    "Call a friend and ask them to describe you in three words, on speaker.",
+                    "Show the group your screen time app-by-app breakdown for today.",
+                    "Let the group choose an old photo of you to make your new lock screen.",
+                    "Text someone 'guess who' with no other context and read their response.",
+                    "Show the group the last meme you saved.",
+                    "Let someone in the group rate your last five Instagram posts out loud.",
+                    "Read the group your most recent search in any shopping app.",
+                    "Do a dramatic reading of your own bio on any app.",
+                    "Let the group pick who you have to compliment next, out loud, right now.",
+                    "Show your notifications from the last hour, unfiltered.",
+                    "Send a message to your family group chat saying you won a game (you can explain later).",
+                    "Let someone scroll your recently deleted photos for 15 seconds, if you dare.",
+                    "Do an impression of how you text when you're annoyed.",
+                    "Read out the last thing you typed and deleted in a message.",
+                    "Let the group pick your desktop or phone wallpaper for the week.",
+                    "Show your most recent tab open in your browser.",
+                    "Call the last missed call on your phone and see what happens."
                 ]
             },
             spicy: {
@@ -248,7 +448,57 @@
                     "Have you ever faked it?",
                     "Who in this room do you think has the highest body count?",
                     "What is your favorite body part on a guy/girl?",
-                    "Have you ever roleplayed? What was the scenario?"
+                    "Have you ever roleplayed? What was the scenario?",
+                    "What's the most spontaneous thing you've ever done with a partner?",
+                    "Where's the most unexpected place you've been attracted to someone?",
+                    "What's your idea of the perfect romantic evening?",
+                    "Have you ever had a dream about someone in this room that you shouldn't have?",
+                    "What's a physical feature you find irresistible in a partner?",
+                    "What's the boldest pickup line you've ever used or received?",
+                    "Have you ever been caught making out with someone?",
+                    "What's the most romantic thing someone has ever done for you?",
+                    "Do you prefer to be the pursuer or the pursued?",
+                    "What's a movie or show scene you find surprisingly attractive?",
+                    "Have you ever had a crush on someone you weren't supposed to?",
+                    "What's the longest crush you've ever had without telling them?",
+                    "What's your biggest 'ick' when it comes to dating?",
+                    "Have you ever sent a flirty text to the wrong person?",
+                    "What's the most daring thing you've done to flirt with someone?",
+                    "Do you believe in love at first sight? Has it happened to you?",
+                    "What's a compliment that instantly makes you weak?",
+                    "Have you ever had a crush on someone way older or younger than you?",
+                    "What's the most romantic gesture you've ever made for someone?",
+                    "What's your go-to move when you're trying to flirt?",
+                    "Have you ever been someone's rebound? Or had one?",
+                    "What's a song that makes you think of an ex or crush?",
+                    "What's the most attractive thing someone can do without saying a word?",
+                    "Have you ever had a workplace or classroom crush?",
+                    "What's your biggest turn-off in a partner?",
+                    "Have you ever accidentally called someone by the wrong name in an intimate moment?",
+                    "What's the boldest outfit you've ever worn to impress someone?",
+                    "Do you prefer slow burn or love at first sight?",
+                    "What's the most 'in the moment' decision you've made romantically?",
+                    "Have you ever dated two people who knew each other?",
+                    "What's a fantasy date you've always wanted to go on?",
+                    "What's the most vulnerable thing you've shared with a partner?",
+                    "Have you ever gotten butterflies just from a text?",
+                    "What's your love language and how do you show it?",
+                    "Have you ever had a friends-with-benefits situation? How did it end?",
+                    "What's the most jealous you've felt in a relationship?",
+                    "What's a physical touch that instantly relaxes you?",
+                    "Have you ever confessed feelings to someone and regretted it?",
+                    "What's the most romantic city or place you'd want to be kissed in?",
+                    "Have you ever had feelings for someone based only on their voice?",
+                    "What's your idea of a red flag that's secretly a green flag for you?",
+                    "Have you ever been in a situationship? How long did it last?",
+                    "What's the most intense chemistry you've ever felt with someone?",
+                    "Have you ever had a crush confirmed you were not expecting?",
+                    "What's a small gesture that makes you instantly attracted to someone?",
+                    "Have you ever kissed someone to make another person jealous?",
+                    "What's your biggest relationship dealbreaker?",
+                    "Have you ever had an almost-relationship that never became official?",
+                    "What's the most memorable slow dance you've had?",
+                    "Have you ever loved someone who didn't love you back the same way?"
                 ],
                 dare: [
                     "Give the person to your left a neck massage for 1 minute.",
@@ -260,7 +510,57 @@
                     "Let the person opposite you trace a word on your back, and you have to guess it.",
                     "Bite the neck (gently!) of the person next to you.",
                     "Send a risky text to someone in your contacts.",
-                    "Do a pole dance on an imaginary pole for 30 seconds."
+                    "Do a pole dance on an imaginary pole for 30 seconds.",
+                    "Give the person across from you your best 'bedroom eyes' for 10 seconds.",
+                    "Let the group pick who you have to slow dance with for one song.",
+                    "Whisper a compliment into the ear of the person to your left.",
+                    "Do your most seductive walk across the room.",
+                    "Let someone feed you a piece of food without using your hands.",
+                    "Hold eye contact with the person across from you for 30 seconds without laughing.",
+                    "Let the group pick two people who have to have a staring contest — loser gives the winner a compliment.",
+                    "Do your best slow-motion hair flip.",
+                    "Let the person next to you give you a hand massage for 30 seconds.",
+                    "Describe your ideal partner using only hand gestures.",
+                    "Let the group decide who you give a piggyback ride to.",
+                    "Do your best impression of a romantic movie confession scene, aimed at anyone in the room.",
+                    "Let someone draw a heart on your hand with a pen and you have to keep it there.",
+                    "Whisper your celebrity crush into the ear of the person across from you.",
+                    "Do a slow, dramatic wink at everyone in the room, one at a time.",
+                    "Let the group pick a song for you to slow dance to by yourself.",
+                    "Give the person to your right a compliment that would make them blush.",
+                    "Let someone braid or style your hair while you stay completely still.",
+                    "Do your best 'come here' finger wave at the person across from you.",
+                    "Let the group pick who you have to write a flirty note to.",
+                    "Hold hands with the person next to you for the next full round.",
+                    "Do a dramatic slow reveal of your 'best angle' for the camera.",
+                    "Let the person across from you pick your pose for a photo.",
+                    "Whisper a cheesy pickup line to three different people in the room.",
+                    "Let someone rest their head on your shoulder for one full round.",
+                    "Do your best sultry lip sync to a song the group picks.",
+                    "Let the group choose who you have to give a lingering hug to.",
+                    "Trace the alphabet on the back of the person next to you and have them guess a letter.",
+                    "Do your most dramatic 'love at first sight' reaction to whoever walks by.",
+                    "Let someone play with your hair for 30 seconds.",
+                    "Give a compliment to the person across from you while maintaining intense eye contact.",
+                    "Let the group pick who you slow-dance-walk toward dramatically.",
+                    "Do your best 'seductive' catwalk across the room and back.",
+                    "Whisper 'you're trouble' to the person you think is most likely to cause chaos tonight.",
+                    "Let someone rest their hand on yours for the rest of this round.",
+                    "Do a dramatic close-up 'movie kiss' pose (no actual kissing) with a pillow.",
+                    "Let the group pick your 'type' description and you have to agree or disagree out loud.",
+                    "Give your best flirty wink to the camera for a selfie.",
+                    "Let someone whisper a secret into your ear and you have to guess what it was.",
+                    "Do your best impression of someone flirting badly.",
+                    "Let the person to your left pick a love song for your 'entrance music' for the rest of the game.",
+                    "Hold a lingering handshake with the person across from you for 10 seconds while maintaining eye contact.",
+                    "Do a dramatic 'reaching for their hand in slow motion' bit with someone in the room.",
+                    "Let the group vote on your most 'datable' quality and you have to demonstrate it.",
+                    "Whisper your ideal first date idea to the person next to you.",
+                    "Let someone adjust your collar or outfit dramatically like in a movie scene.",
+                    "Do your best sultry voice reading of a random object's instructions or label.",
+                    "Let the group pick who gets a forehead kiss blown to them from across the room.",
+                    "Give your most charming smile and hold it for 10 seconds while everyone stares.",
+                    "Let the person across from you pick a nickname for you that sounds like a rom-com love interest."
                 ]
             },
             yapping: {
@@ -274,7 +574,57 @@
                     "Explain why your zodiac sign is completely accurate or totally fake.",
                     "Defend a terrible fashion trend.",
                     "What is the correct way to load a dishwasher? Defend your stance.",
-                    "Who is the most overrated musician of all time and why?"
+                    "Who is the most overrated musician of all time and why?",
+                    "Give a 2-minute speech on why mornings are either the best or worst part of the day.",
+                    "Explain why pineapple does or doesn't belong on pizza, with full conviction.",
+                    "Defend your stance: is a hotdog a sandwich? You have 90 seconds.",
+                    "Give a passionate argument for why your generation is the best one.",
+                    "Explain, in detail, the plot of the last dream you remember having.",
+                    "Rant about the most annoying phone notification for 60 seconds.",
+                    "Give a TED talk on why socks with sandals should or shouldn't be a crime.",
+                    "Explain why your favorite season is objectively correct.",
+                    "Defend the idea that cereal is or isn't a soup.",
+                    "Give a 2-minute breakdown of your ideal daily routine.",
+                    "Explain why your hometown is underrated, with full enthusiasm.",
+                    "Rant about the worst customer service experience you've had.",
+                    "Give a speech defending your worst habit as actually a strength.",
+                    "Explain why your star sign makes you the best (or worst) friend.",
+                    "Argue for 60 seconds why texting is better or worse than calling.",
+                    "Give a dramatic reading of a fake product review for something in the room.",
+                    "Explain the rules of a made-up sport you just invented, on the spot.",
+                    "Rant about a fictional character's terrible decision-making.",
+                    "Give a passionate defense of your favorite childhood snack.",
+                    "Explain why your favorite app is changing the world.",
+                    "Argue why weekends should be three days long, with full conviction.",
+                    "Give a 90-second history of your friendship with the person next to you, dramatized.",
+                    "Explain a conspiracy theory about someone in this room (a fun, harmless one).",
+                    "Rant about a plot hole in your favorite movie.",
+                    "Give a motivational speech as if you're a coach before a big game, about doing laundry.",
+                    "Explain why your favorite meme deserves an award.",
+                    "Argue for or against pineapple juice as an underrated drink.",
+                    "Give a dramatic monologue about losing your phone charger.",
+                    "Explain the entire plot of a movie using only gestures and sound effects, then narrate it.",
+                    "Rant about the worst app update you've ever experienced.",
+                    "Give a passionate 60-second argument for why cats or dogs are superior.",
+                    "Explain why your favorite fictional universe has the best worldbuilding.",
+                    "Argue that mornings should start at noon, with full seriousness.",
+                    "Give a dramatic weather report for the inside of this room right now.",
+                    "Explain a wild fan theory about a show or movie everyone knows.",
+                    "Rant about the most overrated food trend.",
+                    "Give a 2-minute pitch for a terrible business idea as if it's genius.",
+                    "Explain why your favorite holiday is the most underrated one.",
+                    "Argue why silence or background noise is better while studying.",
+                    "Give a dramatic retelling of your morning like it's an action movie trailer.",
+                    "Explain the 'lore' of your friend group like it's an epic saga.",
+                    "Rant about a minor rule you think is completely unnecessary.",
+                    "Give a passionate speech on why naps should be mandatory.",
+                    "Explain why a specific emoji is the most versatile one that exists.",
+                    "Argue that one specific day of the week is scientifically the worst.",
+                    "Give a dramatic sports-commentary narration of someone eating a snack right now.",
+                    "Explain why your go-to comfort show never gets old.",
+                    "Rant about the worst font ever used in an official document.",
+                    "Give a 60-second infomercial pitch for 'silence' as a product.",
+                    "Explain why your favorite childhood cartoon holds up (or doesn't) today."
                 ],
                 dare: [
                     "Talk non-stop for 1 minute about the history of the fork.",
@@ -286,7 +636,47 @@
                     "Debate yourself on whether a hotdog is a sandwich for 1 minute.",
                     "Give a fake sales pitch for a useless object in the room.",
                     "Explain how Wi-Fi works, completely making it up as you go.",
-                    "Narrate everything the person to your left does for the next 2 minutes like a sports commentator."
+                    "Narrate everything the person to your left does for the next 2 minutes like a sports commentator.",
+                    "Give a dramatic weather forecast for the next hour of this party.",
+                    "Do a fake unboxing video narration for a random object in the room.",
+                    "Give a TED talk on the secret life of houseplants, fully improvised.",
+                    "Do a play-by-play commentary of yourself walking across the room like it's the Olympics.",
+                    "Give a dramatic true-crime documentary narration about who ate the last snack.",
+                    "Host a fake cooking show explaining how to make a random snack in the room.",
+                    "Give a motivational locker-room speech about finishing this game of Truth or Dare.",
+                    "Do a fake late-night talk show monologue about your day.",
+                    "Narrate someone tying their shoes like it's a nature documentary.",
+                    "Give a dramatic courtroom closing statement defending pineapple pizza.",
+                    "Do a fake radio DJ intro for the next song that plays.",
+                    "Give a passionate eulogy for your phone battery at 1%.",
+                    "Host a fake game show asking the group trivia about yourself.",
+                    "Do a dramatic movie trailer voiceover for 'the rest of this party.'",
+                    "Give a fake TED talk on why Mondays should be illegal.",
+                    "Narrate the room like a nature documentary about a rare species (the group).",
+                    "Do a fake infomercial for 'silence' as the ultimate life hack.",
+                    "Give a dramatic play-by-play of someone opening a bag of chips.",
+                    "Host a fake awards show and give out a silly award to someone in the room.",
+                    "Do an impression of a GPS giving directions to the kitchen.",
+                    "Give a dramatic historical reenactment speech about the invention of pizza.",
+                    "Do a fake breaking news report about a 'crisis' at this party (something silly).",
+                    "Narrate your own life like a nature documentary for 60 seconds.",
+                    "Give a fake TED talk on why naps are a human right.",
+                    "Do a dramatic soap opera scene reaction to someone offering you a snack.",
+                    "Host a fake cooking competition judging show, judging a snack in the room.",
+                    "Give a passionate speech defending why your phone case is the best decision you've made.",
+                    "Do a fake stand-up comedy bit about something that happened tonight.",
+                    "Narrate a game of rock-paper-scissors like it's a championship boxing match.",
+                    "Give a dramatic monologue as if you're a villain explaining your master plan (something silly).",
+                    "Do a fake weather report predicting the mood of the room for the next hour.",
+                    "Host a mini debate with yourself about whether cereal is soup, playing both sides.",
+                    "Give a dramatic speech thanking your phone charger like an award acceptance.",
+                    "Do an impersonation of a flight attendant giving safety instructions for 'surviving this party.'",
+                    "Narrate the group's snack choices like a nature documentary about feeding time.",
+                    "Give a fake product pitch trying to sell 'awkward silence' as a wellness trend.",
+                    "Do a dramatic play-by-play sports commentary of two people playing rock-paper-scissors.",
+                    "Host a fake late-night show and 'interview' the person next to you about their day.",
+                    "Give a passionate speech about why the group should let you win the next round.",
+                    "Do a fake historical documentary narration about how this friend group formed."
                 ]
             }
         };
@@ -321,7 +711,7 @@
                 // Show target
                 const target = this.screens[screenName];
                 target.classList.add('active');
-                
+
                 // Re-trigger animation
                 target.classList.remove('animate-pop-in');
                 void target.offsetWidth; // trigger reflow
@@ -342,7 +732,7 @@
             // Interactions
             selectCategory(cat) {
                 this.state.category = cat;
-                
+
                 // Set titles based on vibe
                 const titles = {
                     funny: "😂 Funny Mode",
@@ -350,7 +740,7 @@
                     spicy: "🌶️ Spicy Mode",
                     yapping: "🗣️ Yapping Mode"
                 };
-                
+
                 this.ui.choiceTitle.innerText = titles[cat];
                 this.showScreen('choice');
             },
@@ -377,7 +767,7 @@
                 if (!category || !mode) return;
 
                 const questions = gameData[category][mode];
-                
+
                 // Styling updates based on mode
                 if (mode === 'truth') {
                     this.ui.questionLabel.innerText = "TRUTH";
@@ -395,7 +785,7 @@
                 let randomIndex;
                 let question;
                 let attempts = 0;
-                
+
                 do {
                     randomIndex = Math.floor(Math.random() * questions.length);
                     question = questions[randomIndex];
@@ -403,7 +793,7 @@
                 } while (this.state.usedQuestions.has(question) && attempts < 10);
 
                 this.state.usedQuestions.add(question);
-                
+
                 // Clear set if getting too large to prevent infinite loops on small arrays
                 if (this.state.usedQuestions.size > 30) {
                     this.state.usedQuestions.clear();
@@ -420,10 +810,10 @@
         };
 
         // Initialize prevent default on touch gestures to stop bounce on mobile
-        document.addEventListener('touchmove', function(e) { 
+        document.addEventListener('touchmove', function(e) {
             // Only prevent if we are trying to scroll the body
             if(document.body === e.target) {
-                e.preventDefault(); 
+                e.preventDefault();
             }
         }, { passive: false });
     </script>
