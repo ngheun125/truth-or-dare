@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #0f172a; /* Tailwind slate-900 */
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Custom Animations */
+        @keyframes popIn {
+            0% { transform: scale(0.9); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            0% { transform: translateY(20px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-pop-in {
+            animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hide elements gracefully */
+        .screen {
+            display: none;
+        }
+        .screen.active {
+            display: flex;
+        }
+
+        /* Button hover effects */
+        .glass-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+        .glass-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden selection:bg-pink-500 selection:text-white">
+
+    <!-- Background Decorative Elements -->
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-50 animate-float"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-pink-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-50 animate-float" style="animation-delay: 2s;"></div>
+
+    <!-- SCREEN 1: CATEGORY SELECTION -->
+    <main id="screen-category" class="screen active flex-col items-center justify-center w-full max-w-2xl z-10 animate-pop-in">
+        <div class="text-center mb-10">
+            <h1 class="text-5xl md:text-7xl font-black mb-2 uppercase tracking-tight text-white drop-shadow-md">
+                Truth <span class="bg-gradient-to-r from-pink-500 to-violet-500 text-gradient italic pr-2">or</span> Dare
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl font-light">The ultimate party experience.</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 w-full">
+            <!-- Funny -->
+            <button onclick="app.selectCategory('funny')" class="relative overflow-hidden group rounded-3xl p-6 aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-yellow-400 to-orange-500 shadow-lg transform transition hover:scale-105 active:scale-95">
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                <span class="text-5xl mb-3">😂</span>
+                <h2 class="text-2xl font-bold text-white shadow-sm">Funny</h2>
+                <p class="text-yellow-100 text-sm mt-1 opacity-80">Keep it light & silly</p>
+            </button>
+
+            <!-- Juicy -->
+            <button onclick="app.selectCategory('juicy')" class="relative overflow-hidden group rounded-3xl p-6 aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-emerald-400 to-teal-600 shadow-lg transform transition hover:scale-105 active:scale-95">
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                <span class="text-5xl mb-3">🧃</span>
+                <h2 class="text-2xl font-bold text-white shadow-sm">Juicy</h2>
+                <p class="text-emerald-100 text-sm mt-1 opacity-80">Tea, gossip, & drama</p>
+            </button>
+
+            <!-- Spicy -->
+            <button onclick="app.selectCategory('spicy')" class="relative overflow-hidden group rounded-3xl p-6 aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-red-500 to-rose-700 shadow-lg transform transition hover:scale-105 active:scale-95">
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                <span class="text-5xl mb-3">🌶️</span>
+                <h2 class="text-2xl font-bold text-white shadow-sm">Spicy</h2>
+                <p class="text-red-100 text-sm mt-1 opacity-80">Couples & 18+ vibes</p>
+            </button>
+
+            <!-- Yapping -->
+            <button onclick="app.selectCategory('yapping')" class="relative overflow-hidden group rounded-3xl p-6 aspect-square flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 to-indigo-600 shadow-lg transform transition hover:scale-105 active:scale-95">
+                <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                <span class="text-5xl mb-3">🗣️</span>
+                <h2 class="text-2xl font-bold text-white shadow-sm">Yapping</h2>
+                <p class="text-blue-100 text-sm mt-1 opacity-80">Hot takes & rants</p>
+            </button>
+        </div>
+    </main>
+
+    <!-- SCREEN 2: TRUTH OR DARE -->
+    <main id="screen-choice" class="screen flex-col items-center justify-center w-full max-w-md z-10 w-full h-full">
+        <button onclick="app.goHome()" class="absolute top-6 left-6 text-slate-400 hover:text-white transition flex items-center gap-2 font-medium">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Back
+        </button>
+
+        <h2 id="choice-category-title" class="text-2xl font-bold text-slate-300 mb-8 uppercase tracking-widest animate-slide-up">Category</h2>
+        
+        <div class="flex flex-col gap-6 w-full animate-pop-in">
+            <button onclick="app.selectMode('truth')" class="group relative w-full py-16 rounded-3xl overflow-hidden bg-gradient-to-r from-blue-600 to-cyan-500 shadow-lg transform transition hover:-translate-y-2 active:translate-y-1">
+                <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <span class="relative z-10 text-5xl font-black text-white tracking-wider drop-shadow-md">TRUTH</span>
+            </button>
+
+            <div class="flex items-center justify-center">
+                <span class="text-slate-500 font-bold italic">OR</span>
+            </div>
+
+            <button onclick="app.selectMode('dare')" class="group relative w-full py-16 rounded-3xl overflow-hidden bg-gradient-to-r from-pink-600 to-rose-500 shadow-lg transform transition hover:-translate-y-2 active:translate-y-1">
+                <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <span class="relative z-10 text-5xl font-black text-white tracking-wider drop-shadow-md">DARE</span>
+            </button>
+        </div>
+    </main>
+
+    <!-- SCREEN 3: QUESTION DISPLAY -->
+    <main id="screen-question" class="screen flex-col items-center justify-center w-full max-w-2xl z-10">
+        <div class="w-full flex justify-between items-center mb-6 absolute top-6 px-6 left-0 right-0 max-w-2xl mx-auto">
+             <button onclick="app.goBackToChoice()" class="text-slate-400 hover:text-white transition flex items-center gap-2 font-medium glass-btn px-4 py-2 rounded-full">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Change Mode
+            </button>
+            <button onclick="app.goHome()" class="text-slate-400 hover:text-white transition flex items-center gap-2 font-medium glass-btn px-4 py-2 rounded-full">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                Home
+            </button>
+        </div>
+
+        <div id="question-card" class="w-full bg-white/10 backdrop-blur-xl border border-white/20 rounded-[2rem] p-8 md:p-12 shadow-2xl flex flex-col items-center text-center animate-pop-in relative overflow-hidden">
+            <!-- Dynamic Background Glow based on mode -->
+            <div id="card-glow" class="absolute inset-0 opacity-20 pointer-events-none transition-colors duration-500"></div>
+
+            <span id="question-type-label" class="text-sm font-bold uppercase tracking-[0.2em] mb-4 text-white/70 relative z-10">Type</span>
+            
+            <h3 id="question-text" class="text-3xl md:text-5xl font-bold leading-tight mb-8 text-white relative z-10 drop-shadow-sm min-h-[150px] flex items-center justify-center">
+                Question goes here?
+            </h3>
+
+            <div class="flex gap-4 w-full relative z-10">
+                <button onclick="app.nextQuestion()" class="flex-1 bg-white text-slate-900 font-bold py-4 rounded-2xl text-lg hover:bg-slate-200 transition active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                    Next <span id="next-label">Truth</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const gameData = {
+            funny: {
+                truth: [
+                    "What is the most embarrassing thing in your web search history right now?",
+                    "What's a weird habit you do when you're completely alone?",
+                    "If you had to smell like a specific food for the rest of your life, what would it be?",
+                    "What is the most cringe-worthy thing you've ever posted on social media?",
+                    "Have you ever practiced kissing in a mirror or on your hand?",
+                    "What's the longest you've gone without showering?",
+                    "What's a child's movie that honestly still scares you?",
+                    "What is the stupidest thing you've ever lied about?",
+                    "Have you ever accidentally sent a text to the wrong person that ruined your life for a day?",
+                    "What's the worst outfit you've ever worn in public?"
+                ],
+                dare: [
+                    "Do your best impression of the person to your right.",
+                    "Let someone in the group post a status on your social media.",
+                    "Talk in a weird accent for the next 3 rounds.",
+                    "Attempt to do a magic trick. It doesn't have to be good.",
+                    "Show the group the most embarrassing photo on your phone.",
+                    "Sing the chorus of your favorite song as dramatically as possible.",
+                    "Let the group give you a new hairstyle.",
+                    "Do a dramatic reading of the last text message you received.",
+                    "Try to lick your own elbow.",
+                    "Act like a monkey until it's your turn again."
+                ]
+            },
+            juicy: {
+                truth: [
+                    "Who in this room do you think would survive the longest in a zombie apocalypse?",
+                    "What is a secret you kept from your parents growing up?",
+                    "Have you ever been caught checking someone out? Who?",
+                    "What's the worst date you've ever been on?",
+                    "Who is your biggest celebrity crush that you're slightly ashamed of?",
+                    "Have you ever snooped through someone's phone?",
+                    "What is the biggest red flag you've ignored in a person?",
+                    "If you had to date someone in this room, who would it be?",
+                    "What's the most petty reason you've stopped talking to someone?",
+                    "Have you ever ghosted someone? Why?"
+                ],
+                dare: [
+                    "Show the group your screen time stats on your phone.",
+                    "Read out the last 3 DMs you sent on Instagram.",
+                    "Let the person to your left scroll through your photo gallery for 30 seconds.",
+                    "Call a random contact and sing 'Happy Birthday' to them.",
+                    "Text your crush or significant other and say 'We need to talk' then turn your phone off.",
+                    "Confess a minor crime you have committed.",
+                    "Let someone send a random emoji to anyone in your contacts.",
+                    "Tell the group your most controversial opinion about dating.",
+                    "Rate everyone in the room's outfit from 1-10.",
+                    "Show the last 5 things you searched on Google."
+                ]
+            },
+            spicy: {
+                truth: [
+                    "What is your biggest turn-on?",
+                    "Have you ever had a crush on a friend's partner?",
+                    "What is your weirdest kink or fetish?",
+                    "What's the most scandalous place you've hooked up with someone?",
+                    "Have you ever sent a spicy photo to the wrong person?",
+                    "What is the longest you've ever gone making out with someone?",
+                    "Have you ever faked it?",
+                    "Who in this room do you think has the highest body count?",
+                    "What is your favorite body part on a guy/girl?",
+                    "Have you ever roleplayed? What was the scenario?"
+                ],
+                dare: [
+                    "Give the person to your left a neck massage for 1 minute.",
+                    "Demonstrate your best seduction face to the group.",
+                    "Let someone sit on your lap for the next 2 rounds.",
+                    "Whisper something highly inappropriate into the ear of the person on your right.",
+                    "Simulate making out with a pillow for 30 seconds.",
+                    "Do a sensual crawl across the floor.",
+                    "Let the person opposite you trace a word on your back, and you have to guess it.",
+                    "Bite the neck (gently!) of the person next to you.",
+                    "Send a risky text to someone in your contacts.",
+                    "Do a pole dance on an imaginary pole for 30 seconds."
+                ]
+            },
+            yapping: {
+                truth: [
+                    "Explain your deepest conspiracy theory. You have 2 minutes. Go.",
+                    "What is a widely loved movie/show that you think is absolute trash, and why?",
+                    "Explain the entire lore of your favorite video game or movie franchise.",
+                    "Why is your favorite food objectively the best food in the world?",
+                    "Give a 2-minute TED talk on why water is actually wet (or not).",
+                    "Rant about the most minor inconvenience that makes you furious.",
+                    "Explain why your zodiac sign is completely accurate or totally fake.",
+                    "Defend a terrible fashion trend.",
+                    "What is the correct way to load a dishwasher? Defend your stance.",
+                    "Who is the most overrated musician of all time and why?"
+                ],
+                dare: [
+                    "Talk non-stop for 1 minute about the history of the fork.",
+                    "Argue with an inanimate object in the room for 60 seconds.",
+                    "Pretend you are a podcast host and interview the person next to you for 2 minutes.",
+                    "Give a passionate speech about why pigeons are government spies.",
+                    "Review the room you are currently in like it's a 5-star hotel on Yelp.",
+                    "Explain the plot of Shrek like you are a serious film critic.",
+                    "Debate yourself on whether a hotdog is a sandwich for 1 minute.",
+                    "Give a fake sales pitch for a useless object in the room.",
+                    "Explain how Wi-Fi works, completely making it up as you go.",
+                    "Narrate everything the person to your left does for the next 2 minutes like a sports commentator."
+                ]
+            }
+        };
+
+        const app = {
+            state: {
+                category: null,
+                mode: null,
+                usedQuestions: new Set()
+            },
+
+            // DOM Elements
+            screens: {
+                category: document.getElementById('screen-category'),
+                choice: document.getElementById('screen-choice'),
+                question: document.getElementById('screen-question')
+            },
+            ui: {
+                choiceTitle: document.getElementById('choice-category-title'),
+                questionText: document.getElementById('question-text'),
+                questionLabel: document.getElementById('question-type-label'),
+                nextLabel: document.getElementById('next-label'),
+                cardGlow: document.getElementById('card-glow')
+            },
+
+            // Navigation
+            showScreen(screenName) {
+                // Hide all
+                Object.values(this.screens).forEach(screen => {
+                    screen.classList.remove('active');
+                });
+                // Show target
+                const target = this.screens[screenName];
+                target.classList.add('active');
+                
+                // Re-trigger animation
+                target.classList.remove('animate-pop-in');
+                void target.offsetWidth; // trigger reflow
+                target.classList.add('animate-pop-in');
+            },
+
+            goHome() {
+                this.state.category = null;
+                this.state.mode = null;
+                this.showScreen('category');
+            },
+
+            goBackToChoice() {
+                this.state.mode = null;
+                this.showScreen('choice');
+            },
+
+            // Interactions
+            selectCategory(cat) {
+                this.state.category = cat;
+                
+                // Set titles based on vibe
+                const titles = {
+                    funny: "😂 Funny Mode",
+                    juicy: "🧃 Juicy Mode",
+                    spicy: "🌶️ Spicy Mode",
+                    yapping: "🗣️ Yapping Mode"
+                };
+                
+                this.ui.choiceTitle.innerText = titles[cat];
+                this.showScreen('choice');
+            },
+
+            selectMode(mode) {
+                this.state.mode = mode;
+                this.showScreen('question');
+                this.generateQuestion();
+            },
+
+            nextQuestion() {
+                // Add a small shake or pop animation when clicking next
+                const card = document.getElementById('question-card');
+                card.classList.remove('animate-pop-in');
+                card.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                    this.generateQuestion();
+                }, 150);
+            },
+
+            generateQuestion() {
+                const { category, mode } = this.state;
+                if (!category || !mode) return;
+
+                const questions = gameData[category][mode];
+                
+                // Styling updates based on mode
+                if (mode === 'truth') {
+                    this.ui.questionLabel.innerText = "TRUTH";
+                    this.ui.questionLabel.className = "text-sm font-bold uppercase tracking-[0.2em] mb-4 text-cyan-300 relative z-10";
+                    this.ui.nextLabel.innerText = "Truth";
+                    this.ui.cardGlow.className = "absolute inset-0 bg-cyan-500 opacity-20 pointer-events-none transition-colors duration-500";
+                } else {
+                    this.ui.questionLabel.innerText = "DARE";
+                    this.ui.questionLabel.className = "text-sm font-bold uppercase tracking-[0.2em] mb-4 text-rose-300 relative z-10";
+                    this.ui.nextLabel.innerText = "Dare";
+                    this.ui.cardGlow.className = "absolute inset-0 bg-rose-500 opacity-20 pointer-events-none transition-colors duration-500";
+                }
+
+                // Pick a random question
+                // Simple logic to avoid immediate repeats (could be improved to exhaust list)
+                let randomIndex;
+                let question;
+                let attempts = 0;
+                
+                do {
+                    randomIndex = Math.floor(Math.random() * questions.length);
+                    question = questions[randomIndex];
+                    attempts++;
+                } while (this.state.usedQuestions.has(question) && attempts < 10);
+
+                this.state.usedQuestions.add(question);
+                
+                // Clear set if getting too large to prevent infinite loops on small arrays
+                if (this.state.usedQuestions.size > 30) {
+                    this.state.usedQuestions.clear();
+                }
+
+                // Animate text change
+                this.ui.questionText.style.opacity = 0;
+                setTimeout(() => {
+                    this.ui.questionText.innerText = question;
+                    this.ui.questionText.style.transition = 'opacity 0.3s ease';
+                    this.ui.questionText.style.opacity = 1;
+                }, 200);
+            }
+        };
+
+        // Initialize prevent default on touch gestures to stop bounce on mobile
+        document.addEventListener('touchmove', function(e) { 
+            // Only prevent if we are trying to scroll the body, allow if internal scroll is needed later
+            if(document.body === e.target) {
+                e.preventDefault(); 
+            }
+        }, { passive: false });
+    </script>
+</body>
+</html>
